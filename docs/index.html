@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ForensicToolkit — Enterprise Digital Forensics for Windows</title>
+  <meta name="description" content="Professional open-source digital forensics investigation suite. Analyze memory dumps, PCAP files, event logs, detect malware, and generate court-ready reports."/>
+  <meta property="og:title" content="ForensicToolkit — Enterprise Digital Forensics"/>
+  <meta property="og:description" content="Open-source forensics toolkit with memory analysis, network forensics, malware detection, and AI-powered investigation reports."/>
+  <meta property="og:url" content="https://achyuth69.github.io/ForensicsToolkit"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <span class="logo-icon">🔍</span>
+      <span class="logo-text">ForensicToolkit</span>
+      <span class="logo-version">v1.0.0</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#modules">Modules</a></li>
+      <li><a href="#requirements">Requirements</a></li>
+      <li><a href="https://github.com/Achyuth69/ForensicsToolkit" target="_blank">GitHub</a></li>
+    </ul>
+    <a class="btn-nav-download" href="https://github.com/Achyuth69/ForensicsToolkit/releases/latest">
+      ⬇ Download
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">Open Source · Free · Windows 10/11</div>
+    <h1 class="hero-title">
+      Digital Forensics<br/>
+      <span class="gradient-text">Investigation Suite</span>
+    </h1>
+    <p class="hero-subtitle">
+      A professional-grade forensics toolkit for investigators, security analysts, and researchers.
+      Analyze memory dumps, network captures, event logs, and detect malware — all from one unified interface.
+    </p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://github.com/Achyuth69/ForensicsToolkit/releases/latest">
+        ⬇ Download for Windows
+      </a>
+      <a class="btn-secondary" href="https://github.com/Achyuth69/ForensicsToolkit" target="_blank">
+        View on GitHub →
+      </a>
+    </div>
+    <div class="hero-meta">
+      <span>✓ No account required</span>
+      <span>✓ No telemetry</span>
+      <span>✓ MIT Licensed</span>
+    </div>
+  </div>
+  <div class="hero-terminal">
+    <div class="terminal-bar">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="terminal-title">ForensicToolkit — Analysis Console</span>
+    </div>
+    <div class="terminal-body">
+      <p><span class="t-green">[INFO]</span> Loading case: <span class="t-blue">CASE-2024-0042</span></p>
+      <p><span class="t-green">[INFO]</span> Memory image: <span class="t-yellow">dump.raw</span> (4096 MB)</p>
+      <p><span class="t-green">[INFO]</span> Processes found: <span class="t-white">47</span></p>
+      <p><span class="t-red">[ALERT]</span> Suspicious process: <span class="t-red">mimikatz.exe</span> (PID 3842)</p>
+      <p><span class="t-green">[INFO]</span> Network connections: <span class="t-white">312 packets</span></p>
+      <p><span class="t-red">[ALERT]</span> C2 traffic detected → <span class="t-red">185.220.101.x</span></p>
+      <p><span class="t-green">[INFO]</span> YARA scan: <span class="t-red">3 threats</span> / 1,204 files</p>
+      <p><span class="t-green">[INFO]</span> Generating PDF report... <span class="t-green">Done</span></p>
+      <p class="t-cursor">█</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-bar">
+  <div class="stat"><span class="stat-num">9+</span><span class="stat-label">Analysis Modules</span></div>
+  <div class="stat"><span class="stat-num">3</span><span class="stat-label">Report Formats</span></div>
+  <div class="stat"><span class="stat-num">AI</span><span class="stat-label">Powered Insights</span></div>
+  <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Open Source</span></div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="section-inner">
+    <div class="section-label">Why ForensicToolkit</div>
+    <h2 class="section-title">Everything you need for a <span class="gradient-text">complete investigation</span></h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>All-in-One Interface</h3>
+        <p>Every forensic module in a single unified Qt6 application. No switching between tools.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <h3>AI-Powered Analysis</h3>
+        <p>Connect GPT-4, Claude, or local Ollama models to automatically analyze evidence and generate investigation summaries.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📄</div>
+        <h3>Court-Ready Reports</h3>
+        <p>Export findings as professional PDF, HTML, or JSON reports with chain-of-custody, case metadata, and executive summaries.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3>Hash Verification</h3>
+        <p>MD5, SHA-1, SHA-256 hashing with OpenSSL. Verify evidence integrity throughout the investigation lifecycle.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🛡</div>
+        <h3>YARA Detection</h3>
+        <p>Load custom YARA rule sets for malware detection. Built-in heuristics catch packed PEs, shellcode, and extension mismatches.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌐</div>
+        <h3>Deep PCAP Analysis</h3>
+        <p>Native PCAP parser reconstructs TCP streams, DNS queries, HTTP sessions, and flags suspicious C2 traffic patterns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULES -->
+<section class="section section-dark" id="modules">
+  <div class="section-inner">
+    <div class="section-label">Modules</div>
+    <h2 class="section-title">Nine specialized <span class="gradient-text">investigation modules</span></h2>
+    <div class="modules-list">
+      <div class="module-item">
+        <span class="module-icon">🗂</span>
+        <div class="module-info">
+          <h4>File System Analyzer</h4>
+          <p>Recursive directory scanning with MIME detection, hidden file discovery, duplicate detection by hash, and full metadata extraction.</p>
+        </div>
+        <span class="module-tag">Disk Forensics</span>
+      </div>
+      <div class="module-item">
+        <span class="module-icon">🔒</span>
+        <div class="module-info">
+          <h4>File Integrity Monitor</h4>
+          <p>Create cryptographic baselines and detect modified, added, or deleted files. Track tampered evidence across time.</p>
+        </div>
+        <span class="module-tag">Integrity</span>
+      </div>
+      <div class="module-item">
+        <span class="module-icon">🧠</span>
+        <div class="module-info">
+          <h4>Memory Analyzer</h4>
+          <p>Parse raw memory dumps to extract running processes, loaded DLLs, network connections, and ASCII/Unicode strings.</p>
+        </div>
+        <span class="module-tag">Memory Forensics</span>
+      </div>
+      <div class="module-item">
+        <span class="module-icon">🌐</span>
+        <div class="module-info">
+          <h4>Network Forensics</h4>
+          <p>Native PCAP parser with Ethernet/IPv4/TCP/UDP/DNS/HTTP dissection. Reconstructs sessions and identifies suspicious hosts.</p>
+        </div>
+        <span class="module-tag">Network</span>
+      </div>
+      <div class="module-item">
+        <span class="module-icon">📋</span>
+        <div class="module-info">
+          <h4>Event Log Parser</h4>
+          <p>Parse Windows EVTX exports for failed logins, USB insertions, process executions, and security audit events.</p>
+        </div>
+        <span class="module-tag">Windows Forensics</span>
+      </div>
+      <div class="module-item">
+        <span class="module-icon">🦠</span>
+        <div class="module-info">
+          <h4>Malware Detector</h4>
+          <p>YARA-based scanning engine with built-in heuristics for shellcode, packed PEs, and extension mismatches.</p>
+        </div>
+        <span class="module-tag">Malware Analysis</span>
+      </div>
+      <div class="module-item">
+        <span class="module-icon">🤖</span>
+        <div class="module-info">
+          <h4>AI Assistant</h4>
+          <p>Connects to OpenAI, Anthropic, OpenRouter, or local Ollama. Generates structured investigation reports mapped to MITRE ATT&CK.</p>
+        </div>
+        <span class="module-tag">AI / LLM</span>
+      </div>
+      <div class="module-item">
+        <span class="module-icon">📊</span>
+        <div class="module-info">
+          <h4>Report Generator</h4>
+          <p>Export complete case findings as PDF (printer-quality), HTML, or machine-readable JSON with full case metadata.</p>
+        </div>
+        <span class="module-tag">Reporting</span>
+      </div>
+      <div class="module-item">
+        <span class="module-icon">📂</span>
+        <div class="module-info">
+          <h4>Case Manager</h4>
+          <p>SQLite-backed case database. Track investigators, evidence chain-of-custody, case status, and all analysis results per case.</p>
+        </div>
+        <span class="module-tag">Case Management</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REQUIREMENTS -->
+<section class="section" id="requirements">
+  <div class="section-inner">
+    <div class="section-label">System Requirements</div>
+    <h2 class="section-title">Runs on any modern <span class="gradient-text">Windows machine</span></h2>
+    <div class="req-grid">
+      <div class="req-card">
+        <h4>Minimum</h4>
+        <ul>
+          <li>Windows 10 64-bit (1909+)</li>
+          <li>4 GB RAM</li>
+          <li>500 MB disk space</li>
+          <li>1280×720 display</li>
+        </ul>
+      </div>
+      <div class="req-card req-card-highlight">
+        <h4>Recommended</h4>
+        <ul>
+          <li>Windows 11 64-bit</li>
+          <li>16 GB RAM</li>
+          <li>SSD with 10 GB free</li>
+          <li>1920×1080 display</li>
+        </ul>
+      </div>
+      <div class="req-card">
+        <h4>Dependencies</h4>
+        <ul>
+          <li>Included in installer</li>
+          <li>Qt 6.11 runtime (bundled)</li>
+          <li>OpenSSL 4.x (bundled)</li>
+          <li>No .NET or Java required</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2>Ready to investigate?</h2>
+    <p>Free and open source. No registration. No limits.</p>
+    <div class="cta-actions">
+      <a class="btn-primary btn-large" href="https://github.com/Achyuth69/ForensicsToolkit/releases/latest">
+        ⬇ Download ForensicToolkit v1.0.0
+      </a>
+      <a class="btn-secondary" href="https://github.com/Achyuth69/ForensicsToolkit" target="_blank">
+        ⭐ Star on GitHub
+      </a>
+    </div>
+    <p class="cta-note">Windows 10/11 · 64-bit · Free forever</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <span class="logo-icon">🔍</span> ForensicToolkit
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/Achyuth69/ForensicsToolkit" target="_blank">GitHub</a>
+      <a href="https://github.com/Achyuth69/ForensicsToolkit/releases" target="_blank">Releases</a>
+      <a href="https://github.com/Achyuth69/ForensicsToolkit/issues" target="_blank">Report Issue</a>
+      <a href="https://github.com/Achyuth69/ForensicsToolkit/blob/main/LICENSE" target="_blank">License</a>
+    </div>
+    <p class="footer-copy">© 2025 ForensicToolkit · Built with Qt6 · MIT License</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
