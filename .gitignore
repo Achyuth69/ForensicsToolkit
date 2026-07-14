@@ -1,0 +1,77 @@
+# ── Build directories ─────────────────────────────────────────
+build*/
+build_windows/
+build_linux/
+build_macos/
+deploy_windows/
+deploy_linux/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.cmake
+!cmake/*.cmake
+
+# ── Compiled output ───────────────────────────────────────────
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+*.pdb
+*.ilk
+*.exp
+*.obj
+*.o
+
+# ── Qt generated ──────────────────────────────────────────────
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+.qmake.stash
+*.qm
+
+# ── IDE / Editor ──────────────────────────────────────────────
+.vscode/
+.idea/
+*.user
+*.creator
+*.pro.user
+*.kdev4
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Database / runtime data ───────────────────────────────────
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.log
+forensic*.db
+
+# ── Temp / test artifacts ─────────────────────────────────────
+tmp/
+temp/
+*.tmp
+Testing/
+CTestTestfile.cmake
+LastTest.log
+
+# ── Sensitive / config ────────────────────────────────────────
+.env
+*.key
+*.pem
+*.p12
+*.pfx
+config.local.*
+
+# ── Package / archive ─────────────────────────────────────────
+*.zip
+*.tar.gz
+*.tar.bz2
+*.7z
+_CPack_Packages/
+*.nsis

@@ -1,0 +1,2 @@
+Place app.ico here for Windows icon.
+Place splash.png here for splash screen.

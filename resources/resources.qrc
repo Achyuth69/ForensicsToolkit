@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>styles/dark.qss</file>
+        <file>yara_rules/default.yar</file>
+        <file>templates/report_template.html</file>
+    </qresource>
+</RCC>

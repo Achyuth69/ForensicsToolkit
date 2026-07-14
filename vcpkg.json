@@ -1,0 +1,27 @@
+{
+  "name": "forensic-toolkit",
+  "version": "1.0.0",
+  "description": "Enterprise Digital Forensics Investigation Toolkit",
+  "homepage": "https://github.com/yourorg/forensic-toolkit",
+  "license": "MIT",
+  "dependencies": [
+    {
+      "name": "openssl",
+      "version>=": "3.0.0"
+    },
+    {
+      "name": "qt6-base",
+      "version>=": "6.5.0"
+    },
+    {
+      "name": "qt6-charts",
+      "version>=": "6.5.0"
+    },
+    {
+      "name": "qt6-networkauth",
+      "version>=": "6.5.0"
+    }
+  ],
+  "builtin-baseline": "2024-01-01",
+  "overrides": []
+}

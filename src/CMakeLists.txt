@@ -1,0 +1,7 @@
+add_subdirectory(core)
+add_subdirectory(utils)
+add_subdirectory(repositories)
+add_subdirectory(services)
+add_subdirectory(modules)
+add_subdirectory(ui)
+add_subdirectory(plugins)
