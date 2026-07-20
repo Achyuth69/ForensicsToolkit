@@ -5,7 +5,7 @@
 ![Qt](https://img.shields.io/badge/Qt-6-green)
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey)
 
-🌐 **[Live Demo & Documentation]((http://forensictoolkit.achyuth.me/))**
+🌐 **[Live Demo & Documentation](https://forensictoolkit.achyuth.me)**
 
 A production-quality, modular digital forensics investigation toolkit built with **C++17**, **Qt 6**, **OpenSSL**, and **SQLite**. Comparable in concept to ProDiscover, FTK, and Autopsy — designed as a professional software engineering portfolio project.
 
