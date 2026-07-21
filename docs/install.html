@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Install Guide — ForensicToolkit</title>
+  <meta name="description" content="Step-by-step installation guide for ForensicToolkit on Windows 10/11."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* ── Install page extras ── */
+    .install-hero {
+      padding: 140px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .install-hero .hero-bg-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.25;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black, transparent);
+    }
+    .install-hero-inner { position: relative; max-width: 700px; margin: 0 auto; }
+    .install-hero h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 800; color: #fff; margin-bottom: 16px; }
+    .install-hero p { font-size: 17px; color: var(--text2); }
+
+    /* ── Steps layout ── */
+    .install-wrap { max-width: 820px; margin: 0 auto; padding: 0 24px 100px; }
+
+    .step-section { margin-bottom: 56px; }
+    .step-header {
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 24px;
+    }
+    .step-num {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff; font-size: 16px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-header h2 { font-size: 22px; font-weight: 700; color: #fff; }
+
+    .step-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 12px; padding: 28px 32px;
+    }
+    .step-card p { font-size: 15px; color: var(--text2); line-height: 1.8; margin-bottom: 16px; }
+    .step-card p:last-child { margin-bottom: 0; }
+
+    /* download box */
+    .dl-box {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; flex-wrap: wrap;
+      background: rgba(79,142,247,0.06);
+      border: 1px solid rgba(79,142,247,0.25);
+      border-radius: 10px; padding: 20px 24px;
+      margin-top: 20px;
+    }
+    .dl-box-info { display: flex; flex-direction: column; gap: 4px; }
+    .dl-box-name { font-size: 15px; font-weight: 600; color: #fff; }
+    .dl-box-meta { font-size: 13px; color: var(--text3); font-family: 'JetBrains Mono', monospace; }
+    .dl-box .btn-primary { white-space: nowrap; padding: 10px 22px; font-size: 14px; }
+
+    /* warning / info / tip boxes */
+    .notice {
+      display: flex; gap: 14px; align-items: flex-start;
+      border-radius: 10px; padding: 16px 20px; margin-top: 20px;
+      font-size: 14px; line-height: 1.7;
+    }
+    .notice-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+    .notice-body { color: var(--text2); }
+    .notice-body strong { color: #fff; }
+    .notice.warn  { background: rgba(251,191,36,0.07);  border: 1px solid rgba(251,191,36,0.25); }
+    .notice.info  { background: rgba(79,142,247,0.07);  border: 1px solid rgba(79,142,247,0.25); }
+    .notice.tip   { background: rgba(34,211,165,0.07);  border: 1px solid rgba(34,211,165,0.25); }
+    .notice.danger{ background: rgba(248,113,113,0.07); border: 1px solid rgba(248,113,113,0.25); }
+
+    /* step-by-step sub-list */
+    .install-steps { list-style: none; counter-reset: istep; margin-top: 16px; }
+    .install-steps li {
+      counter-increment: istep;
+      display: flex; gap: 14px; align-items: flex-start;
+      padding: 12px 0; border-bottom: 1px solid var(--border);
+      font-size: 14px; color: var(--text2); line-height: 1.7;
+    }
+    .install-steps li:last-child { border-bottom: none; }
+    .install-steps li::before {
+      content: counter(istep);
+      min-width: 26px; height: 26px; border-radius: 50%;
+      background: var(--bg3); border: 1px solid var(--border);
+      color: var(--accent); font-size: 12px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .install-steps li strong { color: #fff; }
+
+    /* SmartScreen walkthrough */
+    .smartscreen-steps { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+    .ss-step {
+      display: flex; align-items: center; gap: 16px;
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 8px; padding: 14px 18px;
+    }
+    .ss-step-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: rgba(251,191,36,0.15); border: 1px solid rgba(251,191,36,0.3);
+      color: var(--yellow); font-size: 12px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .ss-step p { font-size: 14px; color: var(--text2); margin: 0; }
+    .ss-step strong { color: #fff; }
+
+    /* code snippet */
+    .code-block {
+      background: #0d1117; border: 1px solid var(--border);
+      border-radius: 8px; padding: 16px 20px; margin-top: 16px;
+      font-family: 'JetBrains Mono', monospace; font-size: 13px;
+      color: var(--green); overflow-x: auto;
+    }
+
+    /* checklist */
+    .checklist { list-style: none; margin-top: 16px; }
+    .checklist li {
+      display: flex; gap: 12px; align-items: flex-start;
+      font-size: 14px; color: var(--text2); padding: 8px 0;
+      border-bottom: 1px solid var(--border); line-height: 1.7;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li::before { content: "✓"; color: var(--green); font-weight: 700; flex-shrink: 0; }
+
+    /* divider */
+    .step-divider {
+      display: flex; align-items: center; gap: 16px;
+      margin: 48px 0; color: var(--text3); font-size: 13px;
+    }
+    .step-divider::before, .step-divider::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    /* back link */
+    .back-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--text2); font-size: 14px; margin-bottom: 40px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+        <span class="logo-icon">🔍</span>
+        <span class="logo-text">ForensicToolkit</span>
+        <span class="logo-version">v1.0.0</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="index.html#modules">Modules</a></li>
+      <li><a href="index.html#requirements">Requirements</a></li>
+      <li><a href="install.html" style="color:#fff;">Install Guide</a></li>
+      <li><a href="https://github.com/Achyuth69/ForensicsToolkit" target="_blank">GitHub</a></li>
+    </ul>
+    <a class="btn-nav-download" href="https://github.com/Achyuth69/ForensicsToolkit/releases/download/v1.0.0/ForensicToolkit-1.0.0-Setup.exe">
+      ⬇ Download
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="install-hero">
+  <div class="hero-bg-grid"></div>
+  <div class="install-hero-inner">
+    <div class="hero-badge">Windows 10 / 11 · 64-bit · ~39 MB</div>
+    <h1>Installation <span class="gradient-text">Guide</span></h1>
+    <p>Everything you need to download, install, and launch ForensicToolkit in under 2 minutes.</p>
+  </div>
+</section>
+
+<!-- INSTALL CONTENT -->
+<div class="install-wrap">
+
+  <a class="back-link" href="index.html">← Back to Home</a>
+
+  <!-- STEP 1 -->
+  <div class="step-section">
+    <div class="step-header">
+      <div class="step-num">1</div>
+      <h2>Download the Installer</h2>
+    </div>
+    <div class="step-card">
+      <p>Download the official Windows installer from GitHub Releases. It bundles the application, Qt6 runtime, and OpenSSL — no separate installs needed.</p>
+      <div class="dl-box">
+        <div class="dl-box-info">
+          <span class="dl-box-name">ForensicToolkit-1.0.0-Setup.exe</span>
+          <span class="dl-box-meta">Windows 64-bit · ~39 MB · v1.0.0</span>
+        </div>
+        <a class="btn-primary" href="https://github.com/Achyuth69/ForensicsToolkit/releases/download/v1.0.0/ForensicToolkit-1.0.0-Setup.exe">
+          ⬇ Download
+        </a>
+      </div>
+      <div class="notice info">
+        <span class="notice-icon">ℹ️</span>
+        <div class="notice-body">
+          <strong>No account required.</strong> The file downloads directly from GitHub Releases — no sign-up, no tracking.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-divider">STEP 2</div>
+
+  <!-- STEP 2 -->
+  <div class="step-section">
+    <div class="step-header">
+      <div class="step-num">2</div>
+      <h2>Handle the Windows SmartScreen Warning</h2>
+    </div>
+    <div class="step-card">
+      <p>When you run the installer, Windows SmartScreen will show a blue warning screen — <strong>"Windows protected your PC"</strong>. This is normal for any open-source app that doesn't have an expensive code-signing certificate.</p>
+
+      <div class="notice warn">
+        <span class="notice-icon">⚠️</span>
+        <div class="notice-body">
+          <strong>This is not a virus.</strong> SmartScreen flags any unsigned EXE, including legitimate open-source tools like VLC, 7-Zip, and others on first install.
+        </div>
+      </div>
+
+      <p style="margin-top:20px;">Follow these steps to proceed:</p>
+      <div class="smartscreen-steps">
+        <div class="ss-step">
+          <div class="ss-step-num">1</div>
+          <p>You see the blue screen: <strong>"Windows protected your PC"</strong> with only a "Don't run" button.</p>
+        </div>
+        <div class="ss-step">
+          <div class="ss-step-num">2</div>
+          <p>Click <strong>"More info"</strong> — the small link text below the warning message.</p>
+        </div>
+        <div class="ss-step">
+          <div class="ss-step-num">3</div>
+          <p>A new <strong>"Run anyway"</strong> button appears at the bottom right.</p>
+        </div>
+        <div class="ss-step">
+          <div class="ss-step-num">4</div>
+          <p>Click <strong>"Run anyway"</strong>. The installer will launch normally.</p>
+        </div>
+      </div>
+
+      <div class="notice tip">
+        <span class="notice-icon">💡</span>
+        <div class="notice-body">
+          You can verify the file is safe by right-clicking the EXE → Properties → Digital Signatures, or by scanning it on <strong>VirusTotal</strong> before running.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-divider">STEP 3</div>
+
+  <!-- STEP 3 -->
+  <div class="step-section">
+    <div class="step-header">
+      <div class="step-num">3</div>
+      <h2>Run the Installer</h2>
+    </div>
+    <div class="step-card">
+      <p>The installer uses a standard Windows setup wizard. Follow these steps:</p>
+      <ol class="install-steps">
+        <li>The <strong>UAC prompt</strong> may appear asking for admin privileges — click <strong>Yes</strong>. This is required to install to Program Files.</li>
+        <li>The <strong>Welcome screen</strong> shows. Click <strong>Next</strong> to continue.</li>
+        <li>Review the <strong>License Agreement</strong> (MIT License). Select "I accept" and click <strong>Next</strong>.</li>
+        <li>Choose the <strong>install location</strong>. Default is <code style="color:var(--accent);font-family:'JetBrains Mono',monospace;">C:\Program Files\ForensicToolkit</code>. Click <strong>Next</strong>.</li>
+        <li>Choose whether to create a <strong>Start Menu folder</strong>. Click <strong>Next</strong>.</li>
+        <li>Optionally check <strong>"Create a desktop shortcut"</strong>. Click <strong>Next</strong>.</li>
+        <li>Review the summary and click <strong>Install</strong>. Installation takes about 10–20 seconds.</li>
+        <li>When complete, you can check <strong>"Launch ForensicToolkit"</strong> and click <strong>Finish</strong>.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="step-divider">STEP 4</div>
+
+  <!-- STEP 4 -->
+  <div class="step-section">
+    <div class="step-header">
+      <div class="step-num">4</div>
+      <h2>First Launch</h2>
+    </div>
+    <div class="step-card">
+      <p>After installation, launch ForensicToolkit from the desktop shortcut or Start Menu. On first launch:</p>
+      <ul class="checklist">
+        <li>The application opens to the <strong>Dashboard</strong> view.</li>
+        <li>A default SQLite database is created in <code style="color:var(--accent);font-family:'JetBrains Mono',monospace;">%APPDATA%\ForensicToolkit</code> for storing cases.</li>
+        <li>Log files are written to <code style="color:var(--accent);font-family:'JetBrains Mono',monospace;">%APPDATA%\ForensicToolkit\logs</code>.</li>
+        <li>All modules are available immediately — no activation or license key needed.</li>
+        <li>The AI Assistant requires an API key (OpenAI, Anthropic, or local Ollama). Configure it in <strong>Settings</strong>.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step-divider">OPTIONAL</div>
+
+  <!-- STEP 5 - Optional AI setup -->
+  <div class="step-section">
+    <div class="step-header">
+      <div class="step-num">5</div>
+      <h2>Configure AI Assistant (Optional)</h2>
+    </div>
+    <div class="step-card">
+      <p>The AI Assistant module can connect to cloud LLMs or a local Ollama instance. Go to <strong>Settings → AI Assistant</strong> and enter your credentials:</p>
+      <ul class="checklist">
+        <li><strong>OpenAI</strong> — Paste your API key. Works with GPT-4o, GPT-4, GPT-3.5.</li>
+        <li><strong>Anthropic</strong> — Paste your API key. Works with Claude 3.5 Sonnet and Claude 3 Opus.</li>
+        <li><strong>OpenRouter</strong> — Single key for access to dozens of models.</li>
+        <li><strong>Ollama (local)</strong> — Set the endpoint to <code style="color:var(--accent);font-family:'JetBrains Mono',monospace;">http://localhost:11434</code>. No API key required. Fully offline.</li>
+      </ul>
+      <div class="notice tip">
+        <span class="notice-icon">💡</span>
+        <div class="notice-body">
+          For fully offline use with no cost, install <a href="https://ollama.com" target="_blank" style="color:var(--accent);">Ollama</a> and pull a model like <code style="font-family:'JetBrains Mono',monospace;">ollama pull llama3</code>. Then set the endpoint in Settings.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-divider">TROUBLESHOOTING</div>
+
+  <!-- TROUBLESHOOTING -->
+  <div class="step-section">
+    <div class="step-header">
+      <div class="step-num">?</div>
+      <h2>Troubleshooting</h2>
+    </div>
+    <div class="step-card">
+      <p><strong style="color:#fff;">App won't start after install</strong></p>
+      <p>Make sure you're on Windows 10 64-bit (1909+) or Windows 11. The installer only supports x64 systems.</p>
+
+      <p style="margin-top:20px;"><strong style="color:#fff;">Missing DLL errors</strong></p>
+      <p>Re-run the installer — it bundles all required DLLs including the Visual C++ runtime. If it persists, install the <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe" target="_blank" style="color:var(--accent);">Visual C++ Redistributable 2022 x64</a>.</p>
+
+      <p style="margin-top:20px;"><strong style="color:#fff;">Antivirus quarantines the file</strong></p>
+      <p>Add an exclusion for the ForensicToolkit install directory in your antivirus settings. The unsigned binary may trigger heuristic detections — this is a false positive.</p>
+
+      <p style="margin-top:20px;"><strong style="color:#fff;">Still having issues?</strong></p>
+      <div class="notice info" style="margin-top:10px;">
+        <span class="notice-icon">🐛</span>
+        <div class="notice-body">
+          Open an issue on <a href="https://github.com/Achyuth69/ForensicsToolkit/issues" target="_blank" style="color:var(--accent);">GitHub Issues</a> with your Windows version, error message, and the log file from <code style="font-family:'JetBrains Mono',monospace;">%APPDATA%\ForensicToolkit\logs</code>.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Final CTA -->
+  <div style="text-align:center; margin-top: 20px;">
+    <a class="btn-primary btn-large" href="https://github.com/Achyuth69/ForensicsToolkit/releases/download/v1.0.0/ForensicToolkit-1.0.0-Setup.exe">
+      ⬇ Download ForensicToolkit v1.0.0
+    </a>
+    <p style="margin-top:16px; font-size:13px; color:var(--text3);">Windows 10/11 · 64-bit · Free forever · MIT License</p>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <span class="logo-icon">🔍</span> ForensicToolkit
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/Achyuth69/ForensicsToolkit" target="_blank">GitHub</a>
+      <a href="https://github.com/Achyuth69/ForensicsToolkit/releases" target="_blank">Releases</a>
+      <a href="https://github.com/Achyuth69/ForensicsToolkit/issues" target="_blank">Report Issue</a>
+      <a href="https://github.com/Achyuth69/ForensicsToolkit/blob/main/LICENSE" target="_blank">License</a>
+    </div>
+    <p class="footer-copy">© 2025 ForensicToolkit · Built with Qt6 · MIT License</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
