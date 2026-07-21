@@ -1,9 +1,9 @@
 #define MyAppName "ForensicToolkit"
 #define MyAppVersion "1.0.0"
 #define MyAppPublisher "ForensicToolkit Project"
-#define MyAppURL "https://github.com/your-repo"
+#define MyAppURL "https://github.com/Achyuth69/ForensicsToolkit"
 #define MyAppExeName "ForensicToolkit.exe"
-#define MyBinDir "D:\DESKTOP\DA\Cyber\Project-1\build\bin"
+#define MyBinDir "D:\DESKTOP\DA\Cyber\ForensicToolkit\build\bin"
 
 [Setup]
 AppId={{B1C2D3E4-F5A6-7890-ABCD-EF1234567890}
@@ -11,13 +11,13 @@ AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 AppVerName={#MyAppName} {#MyAppVersion}
 AppPublisher={#MyAppPublisher}
-AppPublisherURL={#MyAppURL}
-AppSupportURL={#MyAppURL}
-AppUpdatesURL={#MyAppURL}
+AppPublisherURL=https://github.com/Achyuth69/ForensicsToolkit
+AppSupportURL=https://github.com/Achyuth69/ForensicsToolkit/issues
+AppUpdatesURL=https://github.com/Achyuth69/ForensicsToolkit/releases
 DefaultDirName={autopf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
-OutputDir=D:\DESKTOP\DA\Cyber\Project-1\installer\output
+OutputDir=D:\DESKTOP\DA\Cyber\ForensicToolkit\installer\output
 OutputBaseFilename=ForensicToolkit-1.0.0-Setup
 SetupIconFile=
 Compression=lzma2/ultra64
